@@ -17,7 +17,7 @@ WITH source AS (
         payment_method::STRING AS payment_method
    
     FROM 
-        dbt_cloud.raw_schema.orders
+        {{ source('snowflake_source', 'orders') }}
 ),
 
 cleaned AS (

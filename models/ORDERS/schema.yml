@@ -1,11 +1,18 @@
 version: 2
 
+sources:
+  - name: snowflake_source
+    database: dbt_cloud
+    schema: raw_schema
+    tables:
+      - name: orders
+
 models:
-    - name: orders
-      description: "this is orders model"
-      columns:
-          - name: order_id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: orders
+    description: "this is orders model"
+    columns:
+        - name: order_id
+          description: "The primary key for this table"
+          tests:
+              - unique
+              - not_null
